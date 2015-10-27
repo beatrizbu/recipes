@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Recipe Book</h2>
+
+<div class="table-responsive">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th input class="success" type="button" value="Input">Description</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_items.each do |todo_item| %>
+      <tr class="danger">
+        <td><%= todo_item.description %></td>
+        <td input class="btn btn-default" type="button" value="Input"><%= link_to 'Show', todo_item %></td>
+        <td input class="btn btn-default" type="button" value="Input"><%= link_to 'Edit', edit_todo_item_path(todo_item) %></td>
+        <td input class="btn btn-default" type="button" value="Input"><%= link_to 'Destroy', todo_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+<div class="active">
+<%= link_to 'New Recipe', new_todo_item_path %>
+</div>
+
+
+<!-- <div class="span9">
+  Level 1 column
+  <div class="row">
+    <div class="span6">Level 2</div>
+    <div class="span3">Level 2</div>
+  </div>
+</div>
+</div> -->
